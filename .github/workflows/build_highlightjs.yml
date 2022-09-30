@@ -10,6 +10,8 @@ jobs:
         with:
           repository: highlightjs/highlight.js
       - run: pwd
+      - run: ls -Alh
+      - run: tree .
       - run: git describe --tags
 
       - name: Checkout Flix language spec
@@ -17,5 +19,3 @@ jobs:
         with:
           path: extra/flix
 
-      - run: ls -Alh
-      - run: tree .
