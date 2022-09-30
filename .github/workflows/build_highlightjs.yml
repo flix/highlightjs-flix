@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: highlightjs/highlight.js
-      - run: git checkout (git describe --tags)
+      - run: git checkout `(git describe --tags)`
 
       - name: Checkout Flix language spec
         uses: actions/checkout@v3
