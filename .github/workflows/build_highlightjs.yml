@@ -37,10 +37,10 @@ jobs:
       - name: Test highlight.js
         run: npm run test-markup
 
+      - name: Build minified version
+        run: node ./tools/build.js -t cdn
+
       - name: List all files
         run: |
           tree .
           ls -Alh
-
-      - name: Build minified version
-        run: node ./tools/build.js -t cdn
