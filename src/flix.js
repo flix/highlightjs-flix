@@ -7,7 +7,6 @@ Website: https://flix.dev/
 
 export default function(hljs) {
   
-    const regex = hljs.regex;
     const ANNOTATION = {
       className: 'meta',
       begin: '@[A-Za-z]+'
@@ -20,7 +19,7 @@ export default function(hljs) {
         { begin: '\\$[A-Za-z0-9_]+' },
         {
           begin: /\$\{/,
-          end: /\}/
+          end: /}/
         }
       ]
     };
@@ -85,7 +84,7 @@ export default function(hljs) {
         },
         {
           begin: /\[/,
-          end: /\]/,
+          end: /]/,
           excludeBegin: true,
           excludeEnd: true,
           relevance: 0,
@@ -98,7 +97,7 @@ export default function(hljs) {
     const METHOD = {
       className: 'function',
       beginKeywords: 'def',
-      end: /[\(\[]/, // Start of type parameters or formal parameters
+      end: /[(\[]/, // Start of type parameters or formal parameters
       contains: [
         { // Required type instances
           beginKeywords: 'with',
@@ -106,8 +105,8 @@ export default function(hljs) {
           contains: [ TYPE ]
         },
         { // Effect set
-          begin: /[\&\\]/,
-          end: /[\}\=]/,
+          begin: /[&\\]/,
+          end: /[}=]/,
           relevance: 9,
           contains: [ TYPE ]
         },
