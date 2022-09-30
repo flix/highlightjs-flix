@@ -12,6 +12,8 @@ jobs:
 
       - name: Checkout Flix language spec
         uses: actions/checkout@v3
+        with:
+          path: extra/flix
 
       - run: ls -Alh
       - run: tree .
