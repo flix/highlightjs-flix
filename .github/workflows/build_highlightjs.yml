@@ -36,4 +36,6 @@ jobs:
           npm run test
 
       - name: List all files
-        run: tree .
+        run: |
+          tree .
+          ls -Alh
