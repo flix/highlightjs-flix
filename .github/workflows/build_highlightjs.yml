@@ -2,7 +2,7 @@ name: build-highlightjs
 run-name: Build Flix highlight.js package
 on: [ push ]
 jobs:
-  check-bats-version:
+  build-highlightjs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout highlight.js
@@ -23,11 +23,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-
-      - name: List all files
-        run: |
-          tree .
-          ls -Alh
 
       - name: Build highlight.js
         run: |
