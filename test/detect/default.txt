@@ -32,3 +32,13 @@ def deduplicate(l: List[a]): List[a] with Order[a] =
 def main(): Unit \ IO =
     let l = 1 :: 1 :: 2 :: 2 :: 3 :: 3 :: Nil;
     println(deduplicate(l))
+
+
+///
+/// A simple type class
+///
+pub class Foo[t : Type -> Type] with ToString[t] {
+
+    pub def map(f: a -> b, t: t[a]): t[b] \ Pure
+
+}
