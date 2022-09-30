@@ -29,11 +29,13 @@ jobs:
           tree .
           ls -Alh
 
-      - name: Build & Test highlight.js
+      - name: Build highlight.js
         run: |
           npm install
           node ./tools/build.js -t node
-          npm run test
+
+      - name: Test highlight.js
+        run: npm run test
 
       - name: List all files
         run: |
