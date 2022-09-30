@@ -37,8 +37,19 @@ def main(): Unit \ IO =
 ///
 /// A simple type class
 ///
-pub class Foo[t : Type -> Type] with ToString[t] {
+pub lawful class Foo[t : Type -> Type] with ToString[t] {
 
     pub def map(f: a -> b, t: t[a]): t[b] \ Pure
+
+    law forall(f: a -> b, t: t[a]) with Eq[t[b]] . Foo.map(f, t) == Foo.map(f, t)
+
+}
+
+///
+/// A type class with regions.
+///
+pub class Bar[t : Type -> Type] with ToString[t] {
+
+    pub def map(f: a -> b, t: t[a, r]): t[b, r] \ { Read(r), Write(r) }
 
 }
