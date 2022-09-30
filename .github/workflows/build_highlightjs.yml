@@ -44,3 +44,9 @@ jobs:
         run: |
           tree .
           ls -Alh
+
+      - name: Upload spec
+        uses: actions/upload-artifact@v3
+        with:
+          name: flix.min.js
+          path: extra/flix/dist/flix.min.js
