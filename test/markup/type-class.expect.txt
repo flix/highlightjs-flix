@@ -1,0 +1,8 @@
+<span class="hljs-comment">///</span>
+<span class="hljs-comment">/// A type class with regions.</span>
+<span class="hljs-comment">///</span>
+pub <span class="hljs-keyword">class</span> Bar[t : Type -&gt; Type] <span class="hljs-keyword">with</span> ToString[t] {
+
+    pub <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">map</span></span>(f: a -&gt; b, t: t[a, r]): t[b, r] \ { Read(r), Write(r) }
+
+}
