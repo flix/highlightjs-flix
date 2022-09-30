@@ -6,7 +6,7 @@ Website: https://flix.dev/
 */
 
 export default function(hljs) {
-  
+
     const ANNOTATION = {
       className: 'meta',
       begin: '@[A-Za-z]+'
@@ -153,7 +153,8 @@ export default function(hljs) {
         EXTENSION,
         END,
         ANNOTATION
-      ]
+      ],
+      disableAutodetect: true // It is currently recognized as Scala
     };
   }
   
