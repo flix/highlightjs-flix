@@ -1,0 +1,16 @@
+name: build-highlightjs
+run-name: Build Flix highlight.js package
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout highlight.js
+        uses: actions/checkout@v3
+        with:
+          repository: highlightjs/highlight.js
+
+      - name: Checkout Flix language spec
+        uses: actions/checkout@v3
+
+      - run: ls -Alh
