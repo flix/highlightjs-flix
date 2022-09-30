@@ -3,10 +3,10 @@ Language: Flix
 Category: functional
 Description: language definition for flix files
 Website: https://flix.dev/
-disableAutodetect: true // It is currently recognized as Scala
 */
 
 export default function(hljs) {
+  hljs.disableAutodetect(true)
     const ANNOTATION = {
       className: 'meta',
       begin: '@[A-Za-z]+'
