@@ -24,6 +24,9 @@ jobs:
         with:
           node-version: 18
 
+      - name: List all files
+        run: tree .
+
       - name: Build & Test highlight.js
         run: |
           node ./tools/build.js -t node
