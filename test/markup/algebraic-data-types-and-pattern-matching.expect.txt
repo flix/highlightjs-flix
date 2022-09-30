@@ -1,0 +1,18 @@
+<span class="hljs-comment">/// An algebraic data type for shapes.</span>
+<span class="hljs-keyword">enum</span> Shape {
+    <span class="hljs-keyword">case</span> Circle(Int32),          <span class="hljs-comment">// circle radius</span>
+    <span class="hljs-keyword">case</span> Square(Int32),          <span class="hljs-comment">// side length</span>
+    <span class="hljs-keyword">case</span> Rectangle(Int32, Int32) <span class="hljs-comment">// height and width</span>
+}
+
+<span class="hljs-comment">/// Computes the area of the given shape using</span>
+<span class="hljs-comment">/// pattern matching and basic arithmetic.</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">area</span></span>(s: Shape): Int32 = <span class="hljs-keyword">match</span> s {
+    <span class="hljs-keyword">case</span> Circle(r)       =&gt; <span class="hljs-number">3</span> * (r * r)
+    <span class="hljs-keyword">case</span> Square(w)       =&gt; w * w
+    <span class="hljs-keyword">case</span> Rectangle(h, w) =&gt; h * w
+}
+
+<span class="hljs-comment">// Computes the area of a 2 by 4.</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span></span>(): Unit \ IO =
+    println(area(Rectangle(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>)))

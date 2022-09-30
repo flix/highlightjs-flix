@@ -1,0 +1,47 @@
+name: build-highlightjs
+run-name: Build Flix highlight.js package
+on: [ push ]
+jobs:
+  build-highlightjs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout highlight.js
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          repository: highlightjs/highlight.js
+
+      - name: Checkout latest highlight.js release
+        run: git checkout `(git describe --tags)`
+
+      - name: Checkout Flix language spec
+        uses: actions/checkout@v3
+        with:
+          path: extra/flix
+
+      - name: Install Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Build highlight.js
+        run: |
+          npm install
+          node ./tools/build.js -t node
+
+      - name: Test highlight.js
+        run: npm run test-markup
+
+      - name: Build minified version
+        run: node ./tools/build.js -t cdn
+
+      - name: List all files
+        run: |
+          tree .
+          ls -Alh
+
+      - name: Upload spec
+        uses: actions/upload-artifact@v3
+        with:
+          name: flix.min.js
+          path: extra/flix/dist/flix.min.js

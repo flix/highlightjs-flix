@@ -1,0 +1,55 @@
+///
+/// We can define pure functions that use
+/// internal mutability (impurity) with regions.
+/// Regions encapsulate mutability to its declared scope.
+///
+def deduplicate(l: List[a]): List[a] with Order[a] =
+    /// Declare a new region `r`.
+    region r {
+
+        /// Create a new `MutSet` at region `r`.
+        /// This will be used to keep track of
+        /// unique elements in `l`.
+        let s = new MutSet(r);
+
+        /// The lambda used in the call to `filter`
+        /// would be impure without a region.
+        List.filter(x -> {
+            if (MutSet.memberOf(x, s))
+                false // `x` has already been seen.
+            else {
+                MutSet.add!(x, s);
+                true
+            }
+        }, l)
+    }
+
+///
+/// Create a list `l` with duplicates and
+/// call `deduplicate` that returns a new list
+/// with only unique elements.
+///
+def main(): Unit \ IO =
+    let l = 1 :: 1 :: 2 :: 2 :: 3 :: 3 :: Nil;
+    println(deduplicate(l))
+
+
+///
+/// A simple type class
+///
+pub lawful class Foo[t : Type -> Type] with ToString[t] {
+
+    pub def map(f: a -> b, t: t[a]): t[b] \ Pure
+
+    law forall(f: a -> b, t: t[a]) with Eq[t[b]] . Foo.map(f, t) == Foo.map(f, t)
+
+}
+
+///
+/// A type class with regions.
+///
+pub class Bar[t : Type -> Type] with ToString[t] {
+
+    pub def map(f: a -> b, t: t[a, r]): t[b, r] \ { Read(r), Write(r) }
+
+}

@@ -1,0 +1,24 @@
+{
+    "name": "highlightjs-flix",
+    "version": "0.0.1",
+    "description": "highlight.js syntax definition for the Flix language",
+    "main": "src/flix.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/flix/highlight.js"
+    },
+    "keywords": [
+        "flix",
+        "highlight.js",
+        "highlightjs",
+        "syntax"
+    ],
+    "license": "Apache License 2.0",
+    "bugs": {
+        "url": "https://github.com/flix/highlight.js/issues"
+    },
+    "homepage": "https://github.com/flix/highlight.js"
+}

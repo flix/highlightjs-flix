@@ -1,0 +1,8 @@
+///
+/// A type class with regions.
+///
+pub class Bar[t : Type -> Type] with ToString[t] {
+
+    pub def map(f: a -> b, t: t[a, r]): t[b, r] \ { Read(r), Write(r) }
+
+}
