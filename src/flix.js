@@ -6,7 +6,7 @@ Website: https://flix.dev/
 */
 
 export default function(hljs) {
-
+  hljs.disableAutodetect(true)
     const ANNOTATION = {
       className: 'meta',
       begin: '@[A-Za-z]+'
