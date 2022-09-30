@@ -11,13 +11,23 @@ jobs:
           fetch-depth: 0
           repository: highlightjs/highlight.js
 
-      - run: pwd
-      - run: ls -Alh
-      - run: tree .
-      - run: git checkout `(git describe --tags)`
+      - name: Checkout latest highlight.js release
+        run: git checkout `(git describe --tags)`
 
       - name: Checkout Flix language spec
         uses: actions/checkout@v3
         with:
           path: extra/flix
 
+      - name: Install Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Build & Test highlight.js
+        run: |
+          node ./tools/build.js -t node
+          npm run test
+
+      - name: List all files
+        run: tree .
