@@ -8,7 +8,7 @@
     },
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/flix/highlight.js"
     },
     "keywords": [
         "flix",
@@ -16,9 +16,9 @@
         "highlightjs",
         "syntax"
     ],
-    "license": "",
+    "license": "Apache License 2.0",
     "bugs": {
-        "url": ""
+        "url": "https://github.com/flix/highlight.js/issues"
     },
-    "homepage": ""
+    "homepage": "https://github.com/flix/highlight.js"
 }
