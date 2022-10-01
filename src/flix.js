@@ -97,6 +97,7 @@ export default function(hljs) {
       className: 'function',
       beginKeywords: 'def',
       end: /[(\[]/, // Start of type parameters or formal parameters
+      excludeEnd: true,
       contains: [
         { // Required type instances
           beginKeywords: 'with',
@@ -152,8 +153,7 @@ export default function(hljs) {
         EXTENSION,
         END,
         ANNOTATION
-      ],
-      disableAutodetect: true // It is currently recognized as Scala
+      ]
     };
   }
   
