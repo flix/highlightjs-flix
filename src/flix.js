@@ -260,18 +260,6 @@ export default function(hljs) {
           ],
           relevance: 0
         },
-        {
-          begin: hljs.IDENT_RE + '::',
-          keywords: {
-            keyword: "Self",
-            built_in: BUILTINS,
-            type: TYPES
-          }
-        },
-        {
-          className: "punctuation",
-          begin: '->'
-        }
       ]
     };
   }
