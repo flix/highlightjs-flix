@@ -56,14 +56,8 @@ jobs:
           name: flix.min.js
           path: extra/flix/dist/flix.min.js
 
-      - name: Upload Highlight.js Vanilla
+      - name: Upload Highlight.js with Flix bundled
         uses: actions/upload-artifact@v3
         with:
-          name: highlight-vanilla.min.js
+          name: highlight.min.js
           path: build/browser/highlight.min.js
-
-      - name: Upload Highlight.js with bundled Flix Spec
-        uses: actions/upload-artifact@v3
-        with:
-          name: highlight-full.min.js
-          path: highlight.min.js
