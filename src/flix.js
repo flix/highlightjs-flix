@@ -113,11 +113,99 @@ export default function(hljs) {
         NAME
       ]
     };
+
+    const KEYWORDS = [
+      "instance",
+      "lawful",
+      "law",
+      "type",
+      "alias",
+      "yield",
+      "lazy",
+      "force",
+      "override",
+      "def",
+      "with",
+      "let",
+      "sealed",
+      "pub",
+      "object",
+      "if",
+      "then",
+      "else",
+      "for",
+      "foreach",
+      "import",
+      "use",
+      "new",
+      "catch",
+      "class",
+      "case",
+      "default",
+      "try",
+      "match",
+      "enum",
+      "and",
+      "or",
+      "not",
+      "ref",
+      "deref",
+      "as",
+      "eff",
+      "upcast",
+      "static",
+      "spawn",
+      "solve",
+      "select",
+      "region",
+      "par",
+      "namespace",
+      "without",
+      "do",
+      "resume",
+      "chan",
+      "select",
+      "inject",
+      "project",
+      "into",
+      "from",
+      "where",
+      "query",
+      "inline",
+      "discard"
+    ]
+
+    const LITERALS = [
+      "()",
+      "true",
+      "false",
+      "Some",
+      "None"
+    ]
+
+    const TYPES = [
+      "Unit",
+      "Bool",
+      "Char",
+      "Float32",
+      "Float64",
+      "Int8",
+      "Int16",
+      "Int32",
+      "Int64",
+      "String",
+      "BigInt"
+    ]
+
+    const BUILTIN = []
+
     return {
       name: 'Flix',
       keywords: {
-        literal: 'true false null',
-        keyword: 'instance lawful law type alias yield lazy force override def with let sealed pub object if then else for foreach import use new catch class case default try match enum and or not ref deref as eff upcast static spawn solve select region par namespace without do resume chan select inject project into from where query inline discard'
+        keyword: KEYWORDS
+        literal: LITERALS,
+        type: TYPES,
+        built_in: BUILTIN
       },
       contains: [
         hljs.C_LINE_COMMENT_MODE,
