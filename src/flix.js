@@ -113,29 +113,6 @@ export default function(hljs) {
         NAME
       ]
     };
-  
-    const EXTENSION = {
-      begin: [
-        /^\s*/, // Is first token on the line
-        'extension',
-        /\s+(?=[[(])/, // followed by at least one space and `[` or `(`
-      ],
-      beginScope: { 2: "keyword", }
-    };
-  
-    const END = {
-      begin: [
-        /^\s*/, // Is first token on the line
-        /end/,
-        /\s+/,
-        /(extension\b)?/, // `extension` is the only marker that follows an `end` that cannot be captured by another rule.
-      ],
-      beginScope: {
-        2: "keyword",
-        4: "keyword",
-      }
-    };
-
     return {
       name: 'Flix',
       keywords: {
@@ -150,8 +127,6 @@ export default function(hljs) {
         METHOD,
         CLASS,
         hljs.C_NUMBER_MODE,
-        EXTENSION,
-        END,
         ANNOTATION
       ]
     };
