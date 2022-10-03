@@ -37,13 +37,6 @@ jobs:
           npm audit fix
           node ./tools/build.js -t all
 
-      - name: Bundle Flix with highlight.js
-        run: |
-          cp build/browser/highlight.min.js highlight.min.js
-          echo "\n\n\n" >> highlight.min.js
-          cat extra/flix/dist/flix.min.js >> highlight.min.js
-          cat highlight.min.js
-
       - name: List all files
         run: |
           pwd
@@ -54,10 +47,10 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: flix.min.js
-          path: extra/flix/dist/flix.min.js
+          path: build/cdn/es/languages/flix.min.js
 
       - name: Upload Highlight.js with Flix bundled
         uses: actions/upload-artifact@v3
         with:
           name: highlight.min.js
-          path: build/browser/highlight.min.js
+          path: build/cdn/es/highlight.min.js
