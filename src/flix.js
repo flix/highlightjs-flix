@@ -175,15 +175,20 @@ export default function(hljs) {
       "query",
       "inline",
       "discard"
-    ]
+    ];
 
     const LITERALS = [
       "()",
       "true",
       "false",
       "Some",
-      "None"
-    ]
+      "None",
+      "LessThan",
+      "EqualTo",
+      "GreaterThan",
+      "Ok",
+      "Err"
+    ];
 
     const TYPES = [
       "Unit",
@@ -196,14 +201,48 @@ export default function(hljs) {
       "Int32",
       "Int64",
       "String",
-      "BigInt"
-    ]
+      "BigInt",
+      "IO",
+      "ef",
+      "ef1",
+      "ef2",
+      "Read",
+      "Write"
+    ];
 
-    const BUILTIN = []
+    const BUILTIN = [
+      "Eq",
+      "PartialOrder",
+      "Order",
+      "Cmp",
+      "List",
+      "Map",
+      "Set",
+      "RedBlackTree",
+      "Result",
+      "Array",
+      "ToString",
+      "toString",
+      "flip",
+      "on",
+      "identity",
+      "fst",
+      "snd",
+      "swap",
+      ">>",
+      "|>",
+      "||>",
+      "!>",
+      "print",
+      "println",
+      "bug!",
+      "unreachable!"
+    ];
 
     return {
       name: 'Flix',
       keywords: {
+        $pattern: hljs.IDENT_RE + '!?',
         keyword: KEYWORDS,
         literal: LITERALS,
         type: TYPES,
