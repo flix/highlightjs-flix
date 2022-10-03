@@ -33,8 +33,6 @@ jobs:
       - name: Build highlight.js
         run: |
           npm install
-          npm audit
-          echo "Running npm audit fix"
           npm audit fix
           node ./tools/build.js -t all
 
