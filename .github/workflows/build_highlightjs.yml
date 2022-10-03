@@ -47,10 +47,10 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: flix.min.js
-          path: build/cdn/es/languages/flix.min.js
+          path: extra/flix/dist/flix.min.js
 
       - name: Upload Highlight.js with Flix bundled
         uses: actions/upload-artifact@v3
         with:
           name: highlight.min.js
-          path: build/cdn/es/highlight.min.js
+          path: build/browser/highlight.min.js
