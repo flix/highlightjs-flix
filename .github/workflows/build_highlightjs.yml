@@ -24,10 +24,15 @@ jobs:
         with:
           node-version: 18
 
+      - name: Test highlight.js
+        run: |
+          node ./tools/build.js -t node
+          npm run test-markup
+
       - name: Build highlight.js
         run: |
           npm install
-          npm audit fix
+          npm audit
           node ./tools/build.js -t all
 
       - name: List all files
@@ -36,17 +41,26 @@ jobs:
           tree .
           ls -Alh
 
-      - name: Test highlight.js
-        run: npm run test-markup
-
-      - name: List all files
+      - name: Bundle Flix with highlight.js
         run: |
-          pwd
-          tree .
-          ls -Alh
+          cp build/browser/highlight.min.js highlight.min.js
+          echo "\n\n\n" >> highlight.min.js
+          cat extra/flix/dist/flix.min.js >> highlight.min.js
 
-      - name: Upload spec
+      - name: Upload Flix spec
         uses: actions/upload-artifact@v3
         with:
           name: flix.min.js
           path: extra/flix/dist/flix.min.js
+
+      - name: Upload Highlight.js Vanilla
+        uses: actions/upload-artifact@v3
+        with:
+          name: highlight.js
+          path: build/browser/highlight.min.js
+
+      - name: Upload Highlight.js with bundled Flix Spec
+        uses: actions/upload-artifact@v3
+        with:
+          name: highlight.js
+          path: highlight.min.js
