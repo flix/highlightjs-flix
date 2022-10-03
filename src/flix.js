@@ -29,33 +29,25 @@ export default function(hljs) {
       className: 'string',
       variants: [
         {
-          begin: '"""',
-          end: '"""'
-        },
-        {
           begin: '"',
           end: '"',
           illegal: '\\n',
           contains: [ hljs.BACKSLASH_ESCAPE ]
         },
         {
-          begin: '[a-z]+"',
-          end: '"',
+          begin: '"',
+          end: '${',
+          excludeEnd: true,
           illegal: '\\n',
-          contains: [
-            hljs.BACKSLASH_ESCAPE,
-            SUBST
-          ]
+          contains: [ hljs.BACKSLASH_ESCAPE ]
         },
         {
-          className: 'string',
-          begin: '[a-z]+"""',
-          end: '"""',
-          contains: [ SUBST ],
-          relevance: 10
+          begin: '}',
+          end: '"',
+          illegal: '\\n',
+          contains: [ hljs.BACKSLASH_ESCAPE ]
         }
       ]
-  
     };
   
     const TYPE = {
