@@ -27,13 +27,21 @@ jobs:
       - name: Build highlight.js
         run: |
           npm install
+          npm audit fix
           node ./tools/build.js -t all
+
+      - name: List all files
+        run: |
+          pwd
+          tree .
+          ls -Alh
 
       - name: Test highlight.js
         run: npm run test-markup
 
       - name: List all files
         run: |
+          pwd
           tree .
           ls -Alh
 
