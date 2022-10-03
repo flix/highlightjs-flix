@@ -54,3 +54,9 @@ jobs:
         with:
           name: highlight.min.js
           path: build/browser/highlight.min.js
+
+      - name: Upload core.min.js
+        uses: actions/upload-artifact@v3
+        with:
+          name: core.min.js
+          path: build/cdn/es/core.min.js
