@@ -139,7 +139,7 @@ export default function(hljs) {
     return {
       name: 'Flix',
       keywords: {
-        literal: 'true false null', // Pure Impure Read Write IO ?
+        literal: 'true false null',
         keyword: 'instance lawful law type alias yield lazy force override def with let sealed pub object if then else for foreach import use new catch class case default try match enum and or not ref deref as eff upcast static spawn solve select region par namespace without do resume chan select inject project into from where query inline discard'
       },
       contains: [
