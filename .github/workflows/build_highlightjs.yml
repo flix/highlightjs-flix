@@ -26,6 +26,7 @@ jobs:
 
       - name: Test highlight.js
         run: |
+          npm install
           node ./tools/build.js -t node
           npm run test-markup
 
