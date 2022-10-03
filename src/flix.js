@@ -11,6 +11,8 @@ export default function(hljs) {
       begin: '@[A-Za-z]+'
     };
   
+    const NUMBER_SUFFIX = '(f(32|64)|i(8|16|32|64)|ii)\?';
+
     // used in strings for escaping/interpolation/substitution
     const SUBST = {
       className: 'subst',
@@ -214,8 +216,18 @@ export default function(hljs) {
         TYPE,
         METHOD,
         CLASS,
-        hljs.C_NUMBER_MODE,
-        ANNOTATION
+        ANNOTATION,
+        {
+          className: 'number',
+          variants: [
+            { begin: '\\b0b([01_]+)' + NUMBER_SUFFIX },
+            { begin: '\\b0o([0-7_]+)' + NUMBER_SUFFIX },
+            { begin: '\\b0x([A-Fa-f0-9_]+)' + NUMBER_SUFFIX },
+            { begin: '\\b(\\d[\\d_]*(\\.[0-9_]+)?([eE][+-]?[0-9_]+)?)'
+                     + NUMBER_SUFFIX }
+          ],
+          relevance: 0
+        },
       ]
     };
   }
