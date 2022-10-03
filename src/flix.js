@@ -101,6 +101,7 @@ export default function(hljs) {
       end: /[(\[]/, // Start of type parameters or formal parameters
       excludeEnd: true,
       contains: [
+        // TODO: refactor / remove with clause and effect set
         { // Required type instances
           beginKeywords: 'with',
           relevance: 10,
