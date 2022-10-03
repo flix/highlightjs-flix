@@ -204,7 +204,7 @@ export default function(hljs) {
     return {
       name: 'Flix',
       keywords: {
-        keyword: KEYWORDS
+        keyword: KEYWORDS,
         literal: LITERALS,
         type: TYPES,
         built_in: BUILTIN
