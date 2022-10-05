@@ -88,7 +88,10 @@ export default function(hljs) {
     };
 
     const METHOD = {
-      className: 'function',
+      className: {
+        1: "keyword",
+        3: "title.function"
+      },
       beginKeywords: 'def',
       end: /[(\[]/, // Start of type parameters or formal parameters
       excludeEnd: true,
