@@ -30,6 +30,9 @@ jobs:
           node ./tools/build.js -t node
           npm run test-markup
 
+      - name: Prune languages
+        run: rm -r src/languages/*
+
       - name: Build highlight.js
         run: |
           npm install
