@@ -10,13 +10,33 @@ export default function(hljs) {
       scope: 'meta',
       begin: '@[A-Za-z]+'
     };
+
+    const NUMBER_SUFFIX = '(f(32|64)|i(8|16|32|64)|ii)\?';
   
+    const NUMBER = {
+      scope: 'number',
+      begin: hljs.C_NUMBER_RE + NUMBER_SUFFIX,
+      relevance: 0
+    };
+
     const INTERPOLATION = {
       scope: 'subst',
       begin: /\$\{/,
       end: /}/,
       endsParent: true,
       endScope: 'string'
+    };
+
+    // used in strings for escaping/interpolation/substitution
+    const SUBST = {
+      className: 'subst',
+      variants: [
+        { begin: '\\$[A-Za-z0-9_]+' },
+        {
+          begin: /\$\{/,
+          end: /}/
+        }
+      ]
     };
   
     const STRING = {
@@ -117,13 +137,13 @@ export default function(hljs) {
         hljs.C_LINE_COMMENT_MODE,
         hljs.C_BLOCK_COMMENT_MODE,
         STRING,
+        NUMBER,
         TYPE,
         METHOD,
         CLASS,
-        hljs.C_NUMBER_MODE,
         EXTENSION,
         END,
-        ANNOTATION
+        ANNOTATION,
       ]
     };
   }
