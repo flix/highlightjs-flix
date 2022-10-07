@@ -27,22 +27,10 @@ export default function(hljs) {
       endScope: 'string'
     };
 
-    // used in strings for escaping/interpolation/substitution
-    const SUBST = {
-      className: 'subst',
-      variants: [
-        { begin: '\\$[A-Za-z0-9_]+' },
-        {
-          begin: /\$\{/,
-          end: /}/
-        }
-      ]
-    };
-  
     const STRING = {
       scope: 'string',
-      begin: '"',
-      end: '"',
+      begin: '"'
+      end: '\$\{|"',
       illegal: '\\n',
       contains: [ hljs.BACKSLASH_ESCAPE, INTERPOLATION ]
     };
