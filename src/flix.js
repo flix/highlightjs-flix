@@ -23,7 +23,10 @@ export default function(hljs) {
       scope: 'subst',
       begin: /\$\{/,
       end: /\}/,
-      skip: true
+      skip: true,
+      contains: [
+        hljs.IDENT_RE
+      ]
     };
 
     const STRING = {
