@@ -21,16 +21,21 @@ export default function(hljs) {
 
     const INTERPOLATION = {
       scope: 'subst',
-      begin: /\$\{/,
+      begin: [
+        /\$\{/,
+        /\s+/,
+        hljs.IDENT_RE
+      ],
       end: /}/,
-      endsParent: true,
-      endScope: 'string'
+      beginScope: {
+        3: "title"
+      }
     };
 
     const STRING = {
       scope: 'string',
       begin: '"',
-      end: '\$\{|"',
+      end: '"',
       illegal: '\\n',
       contains: [ hljs.BACKSLASH_ESCAPE, INTERPOLATION ]
     };
