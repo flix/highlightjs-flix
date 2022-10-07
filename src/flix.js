@@ -15,6 +15,7 @@ export default function(hljs) {
       scope: 'subst',
       begin: /\$\{/,
       end: /}/,
+      endsParent: true,
       endScope: 'string'
     };
   
