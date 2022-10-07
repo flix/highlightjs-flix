@@ -23,6 +23,7 @@ export default function(hljs) {
       scope: 'subst',
       begin: /\$\{/,
       end: /\}/,
+      skip: true
     };
 
     const STRING = {
