@@ -24,24 +24,42 @@ jobs:
         with:
           node-version: 18
 
-      - name: Build highlight.js
+      - name: Test highlight.js
         run: |
           npm install
           node ./tools/build.js -t node
+          npm run test-markup
 
-      - name: Test highlight.js
-        run: npm run test-markup
+      - name: Prune languages
+        run: rm -r src/languages/*
 
-      - name: Build minified version
-        run: node ./tools/build.js -t cdn
+      - name: Build highlight.js
+        run: |
+          npm install
+          echo "Running npm audit fix"
+          npm audit fix
+          node ./tools/build.js -t all
 
       - name: List all files
         run: |
+          pwd
           tree .
           ls -Alh
 
-      - name: Upload spec
+      - name: Upload Flix spec
         uses: actions/upload-artifact@v3
         with:
           name: flix.min.js
           path: extra/flix/dist/flix.min.js
+
+      - name: Upload Highlight.js with Flix bundled
+        uses: actions/upload-artifact@v3
+        with:
+          name: highlight.min.js
+          path: build/browser/highlight.min.js
+
+      - name: Upload core.min.js
+        uses: actions/upload-artifact@v3
+        with:
+          name: core.min.js
+          path: build/cdn/es/core.min.js
