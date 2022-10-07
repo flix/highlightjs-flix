@@ -10,6 +10,9 @@ export default function(hljs) {
       className: 'meta',
       begin: '@[A-Za-z]+'
     };
+
+
+    const NUMBER_SUFFIX = '(f(32|64)|i(8|16|32|64)|ii)\?';
   
     // used in strings for escaping/interpolation/substitution
     const SUBST = {
@@ -136,6 +139,14 @@ export default function(hljs) {
       }
     };
 
+    const NUMBER = {
+      className: 'number',
+      contains: [
+        { begin: hljs.C_NUMBER_MODE + NUMBER_SUFFIX }
+      ],
+      relevance: 0
+    };
+
     return {
       name: 'Flix',
       keywords: {
@@ -146,13 +157,13 @@ export default function(hljs) {
         hljs.C_LINE_COMMENT_MODE,
         hljs.C_BLOCK_COMMENT_MODE,
         STRING,
+        NUMBER,
         TYPE,
         METHOD,
         CLASS,
-        hljs.C_NUMBER_MODE,
         EXTENSION,
         END,
-        ANNOTATION
+        ANNOTATION,
       ]
     };
   }
