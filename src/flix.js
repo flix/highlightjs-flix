@@ -7,53 +7,22 @@ Website: https://flix.dev/
 
 export default function(hljs) {
     const ANNOTATION = {
-      className: 'meta',
+      scope: 'meta',
       begin: '@[A-Za-z]+'
     };
   
-    // used in strings for escaping/interpolation/substitution
-    const SUBST = {
-      className: 'subst',
-      variants: [
-        { begin: '\\$[A-Za-z0-9_]+' },
-        {
-          begin: /\$\{/,
-          end: /}/
-        }
-      ]
+    const INTERPOLATION = {
+      scope: 'subst',
+      begin: /\$\{/,
+      end: /}/
     };
   
     const STRING = {
-      className: 'string',
-      variants: [
-        {
-          begin: '"""',
-          end: '"""'
-        },
-        {
-          begin: '"',
-          end: '"',
-          illegal: '\\n',
-          contains: [ hljs.BACKSLASH_ESCAPE ]
-        },
-        {
-          begin: '[a-z]+"',
-          end: '"',
-          illegal: '\\n',
-          contains: [
-            hljs.BACKSLASH_ESCAPE,
-            SUBST
-          ]
-        },
-        {
-          className: 'string',
-          begin: '[a-z]+"""',
-          end: '"""',
-          contains: [ SUBST ],
-          relevance: 10
-        }
-      ]
-  
+      scope: 'string',
+      begin: '"',
+      end: '"',
+      illegal: '\\n',
+      contains: [ hljs.BACKSLASH_ESCAPE, INTERPOLATION ]
     };
   
     const TYPE = {
