@@ -22,7 +22,7 @@ export default function(hljs) {
     const INTERPOLATION = {
       scope: 'subst',
       begin: /\$\{/,
-      end: /\}/,
+      end: /}/,
       contains: [
         hljs.IDENT_RE
       ]
