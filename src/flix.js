@@ -21,15 +21,8 @@ export default function(hljs) {
 
     const INTERPOLATION = {
       scope: 'subst',
-      begin: [
-        /\$\{/,
-        /\s+/,
-        hljs.IDENT_RE
-      ],
-      end: /}/,
-      beginScope: {
-        3: "title"
-      }
+      begin: /\$\{/,
+      end: /\}/,
     };
 
     const STRING = {
