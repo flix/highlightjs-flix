@@ -16,7 +16,7 @@ export default function(hljs) {
   
     const NUMBER = {
       scope: 'number',
-      begin: hljs.C_NUMBER_RE + NUMBER_SUFFIX
+      begin: hljs.C_NUMBER_RE + NUMBER_SUFFIX,
       relevance: 0
     };
 
