@@ -74,46 +74,13 @@ export default function(hljs) {
     };
 
     const METHOD = {
-      className: 'function',
+      scope: 'function',
       beginKeywords: 'def',
       end: /[(\[]/, // Start of type parameters or formal parameters
       excludeEnd: true,
       contains: [
-        { // Required type instances
-          beginKeywords: 'with',
-          relevance: 10,
-          contains: [ TYPE ]
-        },
-        { // Effect set
-          begin: /[&\\]/,
-          end: /[}=]/,
-          relevance: 9,
-          contains: [ TYPE ]
-        },
         NAME
       ]
-    };
-  
-    const EXTENSION = {
-      begin: [
-        /^\s*/, // Is first token on the line
-        'extension',
-        /\s+(?=[[(])/, // followed by at least one space and `[` or `(`
-      ],
-      beginScope: { 2: "keyword", }
-    };
-  
-    const END = {
-      begin: [
-        /^\s*/, // Is first token on the line
-        /end/,
-        /\s+/,
-        /(extension\b)?/, // `extension` is the only marker that follows an `end` that cannot be captured by another rule.
-      ],
-      beginScope: {
-        2: "keyword",
-        4: "keyword",
-      }
     };
 
     return {
@@ -130,8 +97,6 @@ export default function(hljs) {
         TYPE,
         METHOD,
         CLASS,
-        EXTENSION,
-        END,
         ANNOTATION,
       ]
     };
