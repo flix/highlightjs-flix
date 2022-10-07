@@ -14,6 +14,12 @@ export default function(hljs) {
 
     const NUMBER_SUFFIX = '(f(32|64)|i(8|16|32|64)|ii)\?';
   
+    const NUMBER = {
+      scope: 'number',
+      begin: hljs.C_NUMBER_RE + NUMBER_SUFFIX
+      relevance: 0
+    };
+
     // used in strings for escaping/interpolation/substitution
     const SUBST = {
       className: 'subst',
@@ -137,14 +143,6 @@ export default function(hljs) {
         2: "keyword",
         4: "keyword",
       }
-    };
-
-    const NUMBER = {
-      className: 'number',
-      contains: [
-        { begin: hljs.C_NUMBER_MODE + NUMBER_SUFFIX }
-      ],
-      relevance: 0
     };
 
     return {
