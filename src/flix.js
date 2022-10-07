@@ -14,7 +14,8 @@ export default function(hljs) {
     const INTERPOLATION = {
       scope: 'subst',
       begin: /\$\{/,
-      end: /}/
+      end: /}/,
+      endScope: 'string'
     };
   
     const STRING = {
