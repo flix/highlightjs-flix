@@ -51,16 +51,10 @@ export default function(hljs) {
       ]
     };
 
-    const PARAMS = {
-      scope: 'params',
-      begin: NAME + 's*:s*' + NAME,
-      end: ',|)'
-    };
-
     const METHOD = {
       scope: 'title.function',
       beginKeywords: 'def',
-      end: /\)/,
+      end: /[(\[]/,
       excludeEnd: true,
       contains: [
         NAME
