@@ -180,15 +180,16 @@ export default function(hljs) {
       "Int64",
       "String",
       "BigInt",
+    ];
+
+    const BUILTIN = [
       "IO",
       "ef",
       "ef1",
       "ef2",
       "Read",
-      "Write"
-    ];
-
-    const BUILTIN = [
+      "Write",
+      "Channel",
       "Eq",
       "PartialOrder",
       "Order",
