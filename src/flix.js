@@ -37,19 +37,19 @@ export default function(hljs) {
     };
   
     const TYPE = {
-      className: 'type',
+      scope: 'type',
       begin: '\\b[A-Z][A-Za-z0-9_]*',
       relevance: 0
     };
   
     const NAME = {
-      className: 'title',
+      scope: 'title',
       begin: /[^0-9\n\t "'(),.`{}\[\]:;][^\n\t "'(),.`{}\[\]:;]+|[^0-9\n\t "'(),.`{}\[\]:;=]/,
       relevance: 0
     };
   
     const CLASS = {
-      className: 'class',
+      scope: 'class',
       beginKeywords: 'class',
       end: /[:={\[\n;]/,
       excludeEnd: true,
