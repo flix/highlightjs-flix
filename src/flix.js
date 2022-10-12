@@ -65,7 +65,6 @@ export default function(hljs) {
   
     };
   
-  
     const NAME = {
       scope: 'title',
       begin: /[^0-9\n\t "'(),.`{}\[\]:;][^\n\t "'(),.`{}\[\]:;]+|[^0-9\n\t "'(),.`{}\[\]:;=]/,
@@ -94,11 +93,138 @@ export default function(hljs) {
       ]
     };
 
+    const KEYWORDS = [
+      "instance",
+      "lawful",
+      "law",
+      "type",
+      "alias",
+      "yield",
+      "lazy",
+      "force",
+      "override",
+      "def",
+      "with",
+      "let",
+      "sealed",
+      "pub",
+      "object",
+      "if",
+      "then",
+      "else",
+      "for",
+      "foreach",
+      "import",
+      "use",
+      "new",
+      "catch",
+      "class",
+      "case",
+      "default",
+      "try",
+      "match",
+      "enum",
+      "and",
+      "or",
+      "not",
+      "ref",
+      "deref",
+      "as",
+      "eff",
+      "upcast",
+      "static",
+      "spawn",
+      "solve",
+      "select",
+      "region",
+      "par",
+      "namespace",
+      "without",
+      "do",
+      "resume",
+      "chan",
+      "select",
+      "inject",
+      "project",
+      "into",
+      "from",
+      "where",
+      "query",
+      "inline",
+      "discard"
+    ];
+
+    const LITERALS = [
+      "()",
+      "true",
+      "false",
+      "Nil",
+      "Some",
+      "None",
+      "LessThan",
+      "EqualTo",
+      "GreaterThan",
+      "Ok",
+      "Err"
+    ];
+
+    const TYPES = [
+      "Unit",
+      "Bool",
+      "Char",
+      "Float32",
+      "Float64",
+      "Int8",
+      "Int16",
+      "Int32",
+      "Int64",
+      "String",
+      "BigInt",
+      "IO",
+      "ef",
+      "ef1",
+      "ef2",
+      "Read",
+      "Write"
+    ];
+
+    const BUILTIN = [
+      "Eq",
+      "PartialOrder",
+      "Order",
+      "Cmp",
+      "List",
+      "Map",
+      "Set",
+      "RedBlackTree",
+      "Result",
+      "Array",
+      "ToString",
+      "toString",
+      "flip",
+      "on",
+      "identity",
+      "fst",
+      "snd",
+      "swap",
+      ">>",
+      "|>",
+      "||>",
+      "!>",
+      "print",
+      "println",
+      "bug!",
+      "unreachable!"
+    ];
+
     return {
       name: 'Flix',
       keywords: {
-        literal: 'true false null Nil',
-        keyword: 'instance lawful law type alias yield lazy force override def with let sealed pub object if then else for foreach import use new catch class case default try match enum and or not ref deref as eff upcast static spawn solve select region par namespace without do resume chan select inject project into from where query inline discard'
+        $pattern: hljs.IDENT_RE + '!?',
+        keyword: KEYWORDS,
+        literal: LITERALS,
+        type: TYPES,
+        built_in: BUILTIN
       },
       contains: [
         hljs.C_LINE_COMMENT_MODE,
