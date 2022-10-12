@@ -50,19 +50,6 @@ export default function(hljs) {
       contains: [
         hljs.C_LINE_COMMENT_MODE,
         hljs.C_BLOCK_COMMENT_MODE,
-        {
-          beginKeywords: 'with',
-          relevance: 10,
-          contains: [ TYPE ]
-        },
-        {
-          begin: /\[/,
-          end: /]/,
-          excludeBegin: true,
-          excludeEnd: true,
-          relevance: 0,
-          contains: [ TYPE ]
-        },
         NAME
       ]
     };
@@ -80,7 +67,7 @@ export default function(hljs) {
     return {
       name: 'Flix',
       keywords: {
-        literal: 'true false null',
+        literal: 'true false null Nil',
         keyword: 'instance lawful law type alias yield lazy force override def with let sealed pub object if then else for foreach import use new catch class case default try match enum and or not ref deref as eff upcast static spawn solve select region par namespace without do resume chan select inject project into from where query inline discard'
       },
       contains: [
