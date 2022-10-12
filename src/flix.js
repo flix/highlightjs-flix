@@ -36,12 +36,6 @@ export default function(hljs) {
       contains: [ hljs.BACKSLASH_ESCAPE, INTERPOLATION ]
     };
   
-    const TYPE = {
-      scope: 'type',
-      begin: '\\b[A-Z][A-Za-z0-9_]*',
-      relevance: 0
-    };
-  
     const NAME = {
       scope: 'title',
       begin: /[^0-9\n\t "'(),.`{}\[\]:;][^\n\t "'(),.`{}\[\]:;]+|[^0-9\n\t "'(),.`{}\[\]:;=]/,
@@ -94,7 +88,6 @@ export default function(hljs) {
         hljs.C_BLOCK_COMMENT_MODE,
         STRING,
         NUMBER,
-        TYPE,
         METHOD,
         CLASS,
         ANNOTATION,
