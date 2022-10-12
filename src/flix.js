@@ -11,7 +11,6 @@ export default function(hljs) {
       begin: '@[A-Za-z]+'
     };
 
-
     const NUMBER_SUFFIX = '(f(32|64)|i(8|16|32|64)|ii)\?';
   
     const NUMBER = {
@@ -20,49 +19,18 @@ export default function(hljs) {
       relevance: 0
     };
 
-    // used in strings for escaping/interpolation/substitution
-    const SUBST = {
+    const INTERPOLATION = {
       scope: 'subst',
-      variants: [
-        { begin: '\\$[A-Za-z0-9_]+' },
-        {
-          begin: /\$\{/,
-          end: /}/
-        }
-      ]
+      begin: /\$\{/,
+      end: /\}/
     };
-  
+
     const STRING = {
       scope: 'string',
-      variants: [
-        {
-          begin: '"""',
-          end: '"""'
-        },
-        {
-          begin: '"',
-          end: '"',
-          illegal: '\\n',
-          contains: [ hljs.BACKSLASH_ESCAPE ]
-        },
-        {
-          begin: '[a-z]+"',
-          end: '"',
-          illegal: '\\n',
-          contains: [
-            hljs.BACKSLASH_ESCAPE,
-            SUBST
-          ]
-        },
-        {
-          scope: 'string',
-          begin: '[a-z]+"""',
-          end: '"""',
-          contains: [ SUBST ],
-          relevance: 10
-        }
-      ]
-  
+      begin: '"',
+      end: '"',
+      illegal: '\\n',
+      contains: [ hljs.BACKSLASH_ESCAPE, INTERPOLATION ]
     };
   
     const NAME = {
