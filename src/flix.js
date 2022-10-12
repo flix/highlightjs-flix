@@ -61,6 +61,20 @@ export default function(hljs) {
       ]
     };
 
+    const HOLE = {
+      scope: 'hole',
+      variants: [
+        {
+          begin: /\?\?\?/,
+          end: hljs.MATCH_NOTHING_RE
+        },
+        {
+          begin: /\?/ + hljs.IDENT_RE,
+          end: hljs.MATCH_NOTHING_RE
+        }
+      ]
+    };
+
     const KEYWORDS = [
       "instance",
       "lawful",
@@ -203,6 +217,7 @@ export default function(hljs) {
         METHOD,
         CLASS,
         ANNOTATION,
+        HOLE
       ]
     };
   }
