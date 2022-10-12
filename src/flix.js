@@ -87,12 +87,12 @@ export default function(hljs) {
       scope: 'params',
       begin: hljs.IDENT_RE + 's*:s*' + hljs.IDENT_RE,
       end: ',|)'
-    }
+    };
 
     const METHOD = {
       scope: 'title.function',
       beginKeywords: 'def',
-      end: /)/,
+      end: /\)/,
       excludeEnd: true,
       contains: [
         hljs.IDENT_RE
