@@ -73,7 +73,7 @@ export default function(hljs) {
   
     const CLASS = {
       scope: 'class',
-      beginKeywords: 'class',
+      beginKeywords: 'class enum',
       end: /[:={\[\n;]/,
       excludeEnd: true,
       contains: [
@@ -86,7 +86,7 @@ export default function(hljs) {
     const METHOD = {
       scope: 'function',
       beginKeywords: 'def',
-      end: /[(\[]/, // Start of type parameters or formal parameters
+      end: /[(\[]/,
       excludeEnd: true,
       contains: [
         NAME
