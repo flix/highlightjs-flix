@@ -47,13 +47,13 @@ export default function(hljs) {
       contains: [
         hljs.C_LINE_COMMENT_MODE,
         hljs.C_BLOCK_COMMENT_MODE,
-        hljs.IDENT_RE
+        NAME
       ]
     };
 
     const PARAMS = {
       scope: 'params',
-      begin: hljs.IDENT_RE + 's*:s*' + hljs.IDENT_RE,
+      begin: NAME + 's*:s*' + NAME,
       end: ',|)'
     };
 
@@ -63,7 +63,7 @@ export default function(hljs) {
       end: /\)/,
       excludeEnd: true,
       contains: [
-        hljs.IDENT_RE
+        NAME
       ]
     };
 
