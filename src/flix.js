@@ -72,24 +72,30 @@ export default function(hljs) {
     };
   
     const CLASS = {
-      scope: 'class',
+      scope: 'title.class',
       beginKeywords: 'class enum',
       end: /[:={\[\n;]/,
       excludeEnd: true,
       contains: [
         hljs.C_LINE_COMMENT_MODE,
         hljs.C_BLOCK_COMMENT_MODE,
-        NAME
+        hljs.IDENT_RE
       ]
     };
 
+    const PARAMS = {
+      scope: 'params',
+      begin: hljs.IDENT_RE + 's*:s*' + hljs.IDENT_RE,
+      end: ',|)'
+    }
+
     const METHOD = {
-      scope: 'function',
+      scope: 'title.function',
       beginKeywords: 'def',
-      end: /[(\[]/,
+      end: /)/,
       excludeEnd: true,
       contains: [
-        NAME
+        hljs.IDENT_RE
       ]
     };
 
