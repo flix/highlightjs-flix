@@ -40,7 +40,7 @@ export default function(hljs) {
     };
   
     const CLASS = {
-      scope: 'class',
+      scope: 'title.class',
       beginKeywords: 'class enum',
       end: /[:={\[\n;]/,
       excludeEnd: true,
@@ -51,10 +51,16 @@ export default function(hljs) {
       ]
     };
 
+    const PARAMS = {
+      scope: 'params',
+      begin: NAME + 's*:s*' + NAME,
+      end: ',|)'
+    };
+
     const METHOD = {
-      scope: 'function',
+      scope: 'title.function',
       beginKeywords: 'def',
-      end: /[(\[]/,
+      end: /\)/,
       excludeEnd: true,
       contains: [
         NAME
