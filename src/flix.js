@@ -75,7 +75,7 @@ export default function(hljs) {
     const CLASS = {
       scope: 'class',
       beginKeywords: 'class enum',
-      end: /[(\[]{/,
+      end: /[:={\[\n;]/,
       excludeEnd: true,
       contains: [
         hljs.C_LINE_COMMENT_MODE,
