@@ -65,11 +65,6 @@ export default function(hljs) {
   
     };
   
-    const TYPE = {
-      scope: 'type',
-      begin: '\\b[A-Z][A-Za-z0-9_]*',
-      relevance: 0
-    };
   
     const NAME = {
       scope: 'title',
@@ -85,19 +80,6 @@ export default function(hljs) {
       contains: [
         hljs.C_LINE_COMMENT_MODE,
         hljs.C_BLOCK_COMMENT_MODE,
-        {
-          beginKeywords: 'with',
-          relevance: 10,
-          contains: [ TYPE ]
-        },
-        {
-          begin: /\[/,
-          end: /]/,
-          excludeBegin: true,
-          excludeEnd: true,
-          relevance: 0,
-          contains: [ TYPE ]
-        },
         NAME
       ]
     };
@@ -123,7 +105,6 @@ export default function(hljs) {
         hljs.C_BLOCK_COMMENT_MODE,
         STRING,
         NUMBER,
-        TYPE,
         METHOD,
         CLASS,
         ANNOTATION,
