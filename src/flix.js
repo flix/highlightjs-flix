@@ -99,6 +99,8 @@ export default function(hljs) {
       "foreach",
       "import",
       "use",
+      "get",
+      "set",
       "new",
       "catch",
       "class",
