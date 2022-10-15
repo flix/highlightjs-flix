@@ -65,11 +65,11 @@ export default function(hljs) {
       scope: 'hole',
       variants: [
         {
-          begin: /\?\?\?/,
+          begin: '???',
           end: hljs.MATCH_NOTHING_RE
         },
         {
-          begin: /\?/ + hljs.IDENT_RE,
+          begin: '?' + hljs.IDENT_RE,
           end: hljs.MATCH_NOTHING_RE
         }
       ]
