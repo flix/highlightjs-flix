@@ -64,8 +64,6 @@ export default function(hljs) {
     const HOLE = {
       scope: 'hole',
       begin: /\?\?\?/,
-      end: hljs.MATCH_NOTHING_RE,
-      excludeEnd: true
     };
 
     const KEYWORDS = [
