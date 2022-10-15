@@ -69,8 +69,6 @@ export default function(hljs) {
         },
         {
           begin: /\?/,
-          end: hljs.MATCH_NOTHING_RE,
-          excludeEnd: true,
           contains: [
             NAME
           ]
