@@ -65,12 +65,10 @@ export default function(hljs) {
       scope: 'hole',
       variants: [
         {
-          begin: '???',
-          end: hljs.MATCH_NOTHING_RE
+          begin: '???'
         },
         {
-          begin: '?' + hljs.IDENT_RE,
-          end: hljs.MATCH_NOTHING_RE
+          begin: '?' + hljs.IDENT_RE
         }
       ]
     };
