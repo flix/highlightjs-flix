@@ -63,14 +63,9 @@ export default function(hljs) {
 
     const HOLE = {
       scope: 'hole',
-      variants: [
-        {
-          begin: '???'
-        },
-        {
-          begin: '?' + hljs.IDENT_RE
-        }
-      ]
+      begin: '???',
+      end: hljs.MATCH_NOTHING_RE,
+      excludeEnd: true
     };
 
     const KEYWORDS = [
