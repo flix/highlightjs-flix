@@ -61,6 +61,21 @@ export default function(hljs) {
       ]
     };
 
+    const HOLE = {
+      scope: 'literal',
+      variants: [
+        {
+          begin: /\?\?\?/
+        },
+        {
+          begin: /\?/,
+          contains: [
+            NAME
+          ]
+        }
+      ]
+    };
+
     const KEYWORDS = [
       "instance",
       "lawful",
@@ -203,6 +218,7 @@ export default function(hljs) {
         METHOD,
         CLASS,
         ANNOTATION,
+        HOLE
       ]
     };
   }
