@@ -21,7 +21,7 @@ export default function(hljs) {
 
     const INTERPOLATION = {
       scope: 'subst',
-      begin: /\$\{/,
+      begin: /(\$|\%)\{/,
       end: /\}/
     };
 
@@ -168,6 +168,9 @@ export default function(hljs) {
     ];
 
     const BUILTIN = [
+      "debug",
+      "debug!",
+      "debug!!",
       "IO",
       "ef",
       "ef1",
