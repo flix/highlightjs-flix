@@ -71,5 +71,5 @@ jobs:
       - name: Upload CDN Flix distributable script.
         uses: actions/upload-artifact@v3
         with:
-          name: highlight.cdn.min.js
+          name: flix.cdn.min.js
           path: build/cdn/es/languages/flix.min.js
