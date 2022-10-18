@@ -29,6 +29,20 @@ We refer you to
 
 ## Use
 
+### Pre-built CDN files
+
+There are pre-built CDN files that can just be dropped in to work with
+an existing highlight.js script.
+These can be found in the `dist/` directory of this repository.
+
+Note that the `dist/highlight.min.js` file is the file
+built by the GitHub workflow in this repository and is a minimal
+highlight.js build that only supports Flix.
+This file is **NOT** part of the CDN pre-built files and should
+hence not but used if you intend to use highlight.js conventionally.
+
+### Using GitHub workflow
+
 The highlight.js file built by the GitHub workflow
 should work automatically when included on a website.
 
