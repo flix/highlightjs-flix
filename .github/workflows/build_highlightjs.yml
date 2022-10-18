@@ -57,3 +57,9 @@ jobs:
         with:
           name: highlight.min.js
           path: build/browser/highlight.min.js
+
+      - name: Upload CDN distributable script.
+        uses: actions/upload-artifact@v3
+        with:
+          name: highlight.cdn.min.js
+          path: extra/flix/dist/flix.min.js
