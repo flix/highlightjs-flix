@@ -46,11 +46,11 @@ jobs:
           tree .
           ls -Alh
 
-      - name: Upload Flix spec
+      - name: Upload Flix CDN distributable
         uses: actions/upload-artifact@v3
         with:
-          name: flix.min.js
-          path: extra/flix/dist/flix.min.js
+          name: flix.cdn.dist
+          path: extra/flix/dist
 
       - name: Upload minimal Highlight.js with Flix bundled
         uses: actions/upload-artifact@v3
