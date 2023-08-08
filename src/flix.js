@@ -41,7 +41,7 @@ export default function(hljs) {
   
     const CLASS = {
       scope: 'title.class',
-      begin: /class|enum/
+      begin: /class|enum/,
       end: /[:={\[A-Z\n;]|\(/,
       excludeEnd: true,
       relevance: 1,
