@@ -82,7 +82,7 @@ export default function(hljs) {
       "as",
       "case",
       "catch",
-      "deafult",
+      "default",
       "def",
       "do",
       "eff",
