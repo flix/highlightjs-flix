@@ -41,13 +41,13 @@ export default function(hljs) {
   
     const CLASS = {
       scope: 'title.class',
-      beginKeywords: /class|enum/
+      begin: /class|enum/
       end: /[:={\[A-Z\n;]|\(/,
       excludeEnd: true,
       relevance: 1,
       contains: [
-        hljs.C_LINE_COMMENT_MODE,
-        hljs.C_BLOCK_COMMENT_MODE,
+        //hljs.C_LINE_COMMENT_MODE,
+        // hljs.C_BLOCK_COMMENT_MODE,
         NAME
       ]
     };
