@@ -15,7 +15,7 @@ jobs:
         run: git checkout `(git describe --tags)`
 
       - name: Checkout Flix language spec
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: extra/flix
 
