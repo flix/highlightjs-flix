@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout highlight.js
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           repository: highlightjs/highlight.js
@@ -15,12 +15,12 @@ jobs:
         run: git checkout `(git describe --tags)`
 
       - name: Checkout Flix language spec
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: extra/flix
 
       - name: Install Node.js 18
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
@@ -47,13 +47,13 @@ jobs:
           ls -Alh
 
       - name: Upload Flix CDN distributable
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: flix.cdn.dist
           path: extra/flix/dist
 
       - name: Upload minimal Highlight.js with Flix bundled
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: highlight.min.js
           path: build/browser/highlight.min.js
