@@ -12,7 +12,7 @@ export default function(hljs) {
     };
 
     const NUMBER_SUFFIX = '(f(32|64)|i(8|16|32|64)|ii)\?';
-  
+
     const NUMBER = {
       scope: 'number',
       begin: hljs.C_NUMBER_RE + NUMBER_SUFFIX,
@@ -32,13 +32,13 @@ export default function(hljs) {
       illegal: '\\n',
       contains: [ hljs.BACKSLASH_ESCAPE, INTERPOLATION ]
     };
-  
+
     const NAME = {
       scope: 'title',
       begin: /[^0-9\n\t "'(),.`{}\[\]:;][^\n\t "'(),.`{}\[\]:;]+|[^0-9\n\t "'(),.`{}\[\]:;=]/,
       relevance: 0
     };
-  
+
     const CLASS = {
       scope: 'title.class',
       beginKeywords: 'class enum',
@@ -81,6 +81,8 @@ export default function(hljs) {
       "as",
       "case",
       "catch",
+      "checked_cast",
+      "checked_ecast",
       "default",
       "def",
       "do",
@@ -108,7 +110,6 @@ export default function(hljs) {
       "let",
       "match",
       "mod",
-      "namespace",
       "object",
       "override",
       "par",
@@ -120,12 +121,12 @@ export default function(hljs) {
       "sealed",
       "select",
       "solve",
+      "trait",
       "try",
       "type",
       "typematch",
-      "checked_cast",
-      "checked_ecast",
       "unchecked_cast",
+      "unchecked_ecast",
       "use",
       "where",
       "with",
@@ -228,4 +229,3 @@ export default function(hljs) {
       ]
     };
   }
-  
