@@ -110,6 +110,7 @@ export default function(hljs) {
       "let",
       "match",
       "mod",
+      "new",
       "object",
       "par",
       "project",
