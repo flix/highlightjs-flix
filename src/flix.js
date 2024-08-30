@@ -122,6 +122,7 @@ export default function(hljs) {
       "sealed",
       "select",
       "solve",
+      "struct",
       "trait",
       "try",
       "type",
