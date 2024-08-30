@@ -129,6 +129,7 @@ export default function(hljs) {
       "typematch",
       "unchecked_cast",
       "unchecked_ecast",
+      "unsafe",
       "use",
       "where",
       "with",
