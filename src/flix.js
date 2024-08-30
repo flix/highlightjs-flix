@@ -123,6 +123,7 @@ export default function(hljs) {
       "select",
       "solve",
       "struct",
+      "throw",
       "trait",
       "try",
       "type",
