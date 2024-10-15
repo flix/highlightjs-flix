@@ -166,9 +166,9 @@ export default function(hljs) {
     ];
 
     const BUILTIN = [
-      "debug",
-      "debug!",
-      "debug!!",
+      "dbg",
+      "dbg!",
+      "dbg!!",
       "IO",
       "ef",
       "ef1",
