@@ -85,7 +85,6 @@ export default function(hljs) {
       "checked_ecast",
       "default",
       "def",
-      "do",
       "eff",
       "else",
       "enum",
