@@ -41,7 +41,7 @@ export default function(hljs) {
 
     const CLASS = {
       scope: 'title.class',
-      beginKeywords: 'class enum',
+      beginKeywords: 'trait enum',
       end: /[:={\[\n;\(]/,
       excludeEnd: true,
       contains: [
@@ -83,43 +83,53 @@ export default function(hljs) {
       "catch",
       "checked_cast",
       "checked_ecast",
-      "default",
+      "choose*",
+      "choose",
       "def",
+      "discard",
       "eff",
       "else",
+      "ematch",
       "enum",
-      "for",
+      "fix",
+      "forall",
       "forA",
-      "forM",
       "force",
       "foreach",
+      "forM",
       "from",
       "handler",
       "if",
       "import",
       "inject",
-      "inline",
+      "instanceof",
       "instance",
       "into",
-      "law",
       "lawful",
+      "law",
       "lazy",
       "let",
       "match",
       "mod",
       "new",
-      "object",
+      "open_variant",
+      "open_variant_as",
+      "override",
       "par",
-      "project",
       "pub",
+      "project",
+      "pquery",
+      "psolve",
       "query",
       "redef",
       "region",
+      "restrictable",
       "resume",
       "run",
       "sealed",
       "select",
       "solve",
+      "spawn",
       "struct",
       "throw",
       "trait",
@@ -127,13 +137,14 @@ export default function(hljs) {
       "type",
       "typematch",
       "unchecked_cast",
-      "unchecked_ecast",
       "unsafe",
+      "unsafely",
       "use",
       "where",
       "with",
       "without",
-      "yield"
+      "yield",
+      "xvar"
     ];
 
     const LITERALS = [
@@ -163,7 +174,9 @@ export default function(hljs) {
       "Int32",
       "Int64",
       "String",
-      "BigInt"
+      "BigInt",
+      "Static",
+      "Univ"
     ];
 
     const BUILTIN = [
@@ -206,8 +219,7 @@ export default function(hljs) {
       "and",
       "or",
       "not",
-      "ref",
-      "deref"
+      "xor",
     ];
 
     return {
