@@ -124,6 +124,7 @@ export default function(hljs) {
       "redef",
       "region",
       "restrictable",
+      "resume",
       "run",
       "sealed",
       "select",
