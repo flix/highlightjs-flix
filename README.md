@@ -78,4 +78,4 @@ the current copy.
 4. Then unzip `flix.cdn.dist` and move `flix.es.min.js` and `flix.min.js` to `dist/`, replacing
 the current copies.
 
-5. Commit these files and push them to the PR.
+5. Commit these files in `dist/` and push them to the PR.
