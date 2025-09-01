@@ -41,7 +41,7 @@ export default function(hljs) {
 
     const CLASS = {
       scope: 'title.class',
-      beginKeywords: 'class enum',
+      beginKeywords: 'trait enum',
       end: /[:={\[\n;\(]/,
       excludeEnd: true,
       contains: [
