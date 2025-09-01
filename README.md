@@ -57,3 +57,25 @@ other things.
 |---------------|--------------------------------------------|
 | `.hljs-subst` | Used for highlighting string interpolation |
 | `.hljs-meta`  | Used for highlighting annotations          |
+
+## Pull Requests
+
+If you open a pull request, you must also include the updated files required for the `dist/`
+directory.
+This can easily be done with the GitHub action in this repository.
+
+1. Once you have submitted your PR, navigate to your fork and select the branch for which you
+have a PR open.
+A GitHub action should have run.
+
+2. Navigate to the summary of that action and download both the `flix.cdn.dist` and
+`highlight.min.js` files.
+We recommended you check the `sha256sum` of the downloaded files against the sha256 sums on GitHub.
+
+3. First, unzip `highlight.min.js.zip` and move the `highlight.min.js` file to `dist/`, replacing
+the current copy.
+
+4. Then unzip `flix.cdn.dist` and move `flix.es.min.js` and `flix.min.js` to `dist/`, replacing
+the current copies.
+
+5. Commit these files and push them to the PR.
